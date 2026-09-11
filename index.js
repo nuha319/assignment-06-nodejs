@@ -25,6 +25,8 @@ const server = http.createServer((req, res) => {
 </body>
 </html>
     `);
+
+    // Blog Page
   } else if (req.url == "/blog") {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(`<!DOCTYPE html>
@@ -47,6 +49,8 @@ const server = http.createServer((req, res) => {
     <p> Welcome to the Blog Page. This is a simple website created using Node.js and the HTTP module.</p>
 </body>
 </html>`);
+
+// Contact Page
   } else if (req.url == "/contact") {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(`<!DOCTYPE html>
@@ -69,6 +73,8 @@ const server = http.createServer((req, res) => {
     <p> Welcome to the Contact Page. This is a simple website created using Node.js and the HTTP module.</p>
 </body>
 </html>`);
+
+// About Page
   } else if (req.url == "/about") {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(`<!DOCTYPE html>
@@ -91,6 +97,11 @@ const server = http.createServer((req, res) => {
     <p> Welcome to the About Page. This is a simple website created using Node.js and the HTTP module.</p>
 </body>
 </html>`);
+
+// Invalid Route
+  } else {
+    res.write("404 - Page Not Found");
+    res.end();
   }
 });
 
